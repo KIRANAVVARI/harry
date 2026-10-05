@@ -1,31 +1,74 @@
-import { memories } from "@/data/memories";
+const memories = [
+  {
+    year: "2023 November",
+    title: "Isha Foundation",
+    image: "/images/timeline/01-isha.jpeg",
+    text: "Where everything began."
+  },
+  {
+    year: "2023 December",
+    title: "Nandi Hills",
+    image: "/images/timeline/02-nandihills.jpeg",
+    text: "Sunrises become memories."
+  },
+  {
+    year: "2024 May",
+    title: "Kedarnath",
+    image: "/images/timeline/05-kedarnath.jpeg",
+    text: "Faith, mountains and friendship."
+  },
+  {
+    year: "2024 December",
+    title: "Manali",
+    image: "/images/timeline/10-manali.jpeg",
+    text: "Snow, smiles and stories."
+  },
+  {
+    year: "2025 October",
+    title: "Wayanad Birthday",
+    image: "/images/timeline/14-wayanad.jpeg",
+    text: "One very special birthday journey."
+  }
+];
 
 export default function Timeline() {
   return (
-    <section className="bg-black text-white py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section
+      id="timeline"
+      className="py-32 px-6"
+    >
+      <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-center text-4xl md:text-6xl font-bold mb-20">
-          Our Journey
+        <h2 className="heading text-center text-5xl mb-20">
+          Our Best Memories
         </h2>
 
-        <div className="space-y-10">
+        <div className="space-y-16">
 
-          {memories.map((memory, index) => (
+          {memories.map((item) => (
             <div
-              key={index}
-              className="border border-blue-900 bg-white/5 backdrop-blur-lg rounded-3xl p-8"
+              key={item.title}
+              className="glass rounded-3xl overflow-hidden"
             >
-              <h3 className="text-2xl mb-3 text-blue-400">
-                {memory.title}
-              </h3>
+              {item.image}
 
-              <p className="text-gray-300">
-                {memory.description}
-              </p>
+              <div className="p-8">
+
+                <p className="text-blue-400">
+                  {item.year}
+                </p>
+
+                <h3 className="text-3xl mt-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-slate-400 mt-3">
+                  {item.text}
+                </p>
+
+              </div>
             </div>
           ))}
-
         </div>
 
       </div>

@@ -116,3 +116,6 @@ body {
 .star {
   animation: floatStar 6s ease-in-out infinite;
 }
+.cursive {
+  font-family: var(--font-cursive);
+}

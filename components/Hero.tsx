@@ -53,40 +53,26 @@ export default function Hero() {
               10 October
             </p>
 
-            <h1 className="heading text-6xl md:text-8xl xl:text-9xl font-bold tracking-tight">
-              Happy
+            <h1 className="heading text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight whitespace-nowrap">
+              Happy Birthday
             </h1>
 
-            <h1 className="heading text-6xl md:text-8xl xl:text-9xl font-bold tracking-tight">
-              Birthday
-            </h1>
-
-            <h2 className="heading text-5xl md:text-7xl text-blue-300 tracking-wide">
-              Harry ❤️
+            <h2 className="cursive text-4xl md:text-6xl xl:text-7xl text-blue-300 tracking-wide mt-8 whitespace-nowrap">
+              Haritha Chalumuri❤️
             </h2>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-slate-300 md:text-xl">
-              A celebration of friendship, adventures, memories and all the
-              beautiful moments that made life brighter.
+              Celebrating the memories, adventures, laughter and beautiful moments that made this friendship unforgettable.
+            </p>
+            <p className="mt-8 italic text-blue-200 text-lg">
+                "Some people become memories. 
+                 Some become stories.
+                 And some become unforgettable."
             </p>
 
-            <a
-              href="#about"
-              className="mt-12 px-10 py-4 rounded-full bg-blue-600 text-white font-semibold shadow-[0_0_40px_rgba(37,99,235,0.4)] hover:scale-105 hover:bg-blue-500 transition-all duration-300"
-            >
-              Explore the Story
-            </a>
-          </div>
-          <div className="mt-16 animate-bounce">
-
-            <div className="text-blue-400 text-2xl">
-              ↓
-            </div>
-
-            <p className="text-xs tracking-[0.3em] mt-2">
-              SCROLL
-            </p>
-
+            <button className="mt-12 px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:scale-105 transition-all duration-300">
+              Begin The Journey ✨
+            </button>
           </div>
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-[120px]" />

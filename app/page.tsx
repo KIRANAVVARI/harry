@@ -11,21 +11,37 @@ export default function Home() {
           src="/images/hero/hero1.jpeg"
           alt="Birthday background"
           fill
-          className="object-cover"
+          priority
+          className="object-cover scale-110"
+          quality={100}
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-slate-950/90" />
         <section className="relative z-10 h-screen flex items-center justify-center text-center px-6">
-          <div className="max-w-4xl">
-
+          <div className="relative max-w-4xl">
+            <div
+                className="
+                  absolute
+                  left-1/2
+                  top-1/2
+                  -translate-x-1/2
+                  -translate-y-1/2
+                  h-[400px]
+                  w-[400px]
+                  rounded-full
+                  bg-blue-500/30
+                  blur-[120px]
+                  -z-10
+                "
+              />
             <p className="uppercase tracking-[0.4em] text-blue-400 mb-6">
               10 October 2026
             </p>
 
-            <h1 className="text-6xl md:text-8xl font-bold">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight">
               Happy Birthday
             </h1>
 
-            <h2 className="text-5xl md:text-7xl text-blue-400 mt-4">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl text-blue-400 mt-4 font-bold">
               Harry ❤️
             </h2>
 
@@ -35,7 +51,7 @@ export default function Home() {
               that made this journey unforgettable.
             </p>
 
-            <button className="mt-10 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 transition-all duration-300">
+            <button className="mt-10 px-10 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-lg font-semibold shadow-xl shadow-blue-500/30 transition-all duration-300 hover:scale-105">
               Begin The Journey
             </button>
 

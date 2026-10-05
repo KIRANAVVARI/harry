@@ -1,9 +1,15 @@
 import Hero from "@/components/Hero";
+import Timeline from "@/components/Timeline";
+import Letter from "@/components/Letter";
+import Surprise from "@/components/Surprise";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
-    </main>
+      <Timeline />
+      <Letter />
+      <Surprise />
+    </>
   );
 }

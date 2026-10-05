@@ -7,15 +7,13 @@ export default function Home() {
       <Navbar />
 
       <main className="relative min-h-screen overflow-hidden text-white">
-
         <Image
-          src="/images/harry.jpg"
+          src="/images/hero/hero1.jpeg"
           alt="Birthday background"
           fill
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/70" />
-
         <section className="relative z-10 h-screen flex items-center justify-center text-center px-6">
           <div className="max-w-4xl">
 

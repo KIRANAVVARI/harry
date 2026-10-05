@@ -53,6 +53,7 @@ body {
     #93c5fd,
     #ffffff
   );
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }

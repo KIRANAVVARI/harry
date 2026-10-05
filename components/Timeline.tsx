@@ -2,31 +2,31 @@ const memories = [
   {
     year: "2023 November",
     title: "Isha Foundation",
-    image: "/images/timeline/01-isha.jpeg",
+    image: "public/images/timeline/01-isha.jpeg",
     text: "Where everything began."
   },
   {
     year: "2023 December",
     title: "Nandi Hills",
-    image: "/images/timeline/02-nandihills.jpeg",
+    image: "public/images/timeline/02-nandihills.jpeg",
     text: "Sunrises become memories."
   },
   {
     year: "2024 May",
     title: "Kedarnath",
-    image: "/images/timeline/05-kedarnath.jpeg",
+    image: "public/images/timeline/05-kedarnath.jpeg",
     text: "Faith, mountains and friendship."
   },
   {
     year: "2024 December",
     title: "Manali",
-    image: "/images/timeline/10-manali.jpeg",
+    image: "public/images/timeline/10-manali.jpeg",
     text: "Snow, smiles and stories."
   },
   {
     year: "2025 October",
     title: "Wayanad Birthday",
-    image: "/images/timeline/14-wayanad.jpeg",
+    image: "public/images/timeline/14-wayanad.jpeg",
     text: "One very special birthday journey."
   }
 ];

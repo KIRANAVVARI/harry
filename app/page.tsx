@@ -13,7 +13,7 @@ export default function Home() {
           fill
           priority
           className="object-cover scale-110"
-          quality={100}
+          quality={75}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-slate-950/90" />
         <section className="relative z-10 h-screen flex items-center justify-center text-center px-6">

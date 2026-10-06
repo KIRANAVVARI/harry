@@ -50,8 +50,8 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-screen items-center">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="uppercase tracking-[0.6em] text-blue-300 text-sm font-light">
-              10 October
+            <p className="uppercase tracking-[0.8em] text-blue-300 text-sm font-light mb-8">
+              10 October • SPECIAL DAY
             </p>
 
             <motion.h1

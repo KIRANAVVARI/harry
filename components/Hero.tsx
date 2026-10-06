@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Floatingstars from "./Floatingstars";
+import { motion } from "framer-motion";
 
 const heroImages = [
   "/images/hero/hero1.jpeg",
@@ -53,13 +54,23 @@ export default function Hero() {
               10 October
             </p>
 
-            <h1 className="heading text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight whitespace-nowrap">
+            <motion.h1
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="heading text-6xl md:text-8xl xl:text-9xl font-bold"
+            >
               Happy Birthday
-            </h1>
+            </motion.h1>
 
-            <h2 className="cursive text-4xl md:text-6xl xl:text-7xl text-blue-300 tracking-wide mt-8 whitespace-nowrap">
-              Haritha Chalumuri❤️
-            </h2>
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="cursive text-6xl md:text-8xl text-blue-300 mt-10"
+            >
+              Harry ❤️
+            </motion.h2>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-slate-300 md:text-xl">
               Celebrating the memories, adventures, laughter and beautiful moments that made this friendship unforgettable.

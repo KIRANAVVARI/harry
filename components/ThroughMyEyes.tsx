@@ -1,187 +1,151 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-const balloons = [
+const qualities = [
   {
-    title: "Strong 💪",
-    text: "Because I've seen you keep moving forward even during difficult times.",
-    color: "bg-blue-400",
+    title: "Str",
+    text: "Because I've seen you keep moving forward through every challenge.",
   },
   {
     title: "Adventurous 🏔️",
-    text: "Because every trip somehow becomes a beautiful memory.",
-    color: "bg-purple-400",
+    text: "Because every trip becomes a memory worth keeping.",
   },
   {
     title: "Dedicated 🎯",
-    text: "Because you never stop once you decide something matters.",
-    color: "bg-pink-400",
+    text: "Because when you commit, you give your best.",
   },
   {
     title: "Supportive 🤝",
     text: "Because you've always been there when it mattered.",
-    color: "bg-red-400",
   },
   {
     title: "Caring ❤️",
     text: "Because your kindness appears in the smallest moments.",
-    color: "bg-cyan-400",
   },
   {
     title: "Fearless 🚀",
     text: "Because challenges never stop you.",
-    color: "bg-green-400",
   },
   {
     title: "Beautiful ✨",
-    text: "Not just in photos, but in the way you carry yourself.",
-    color: "bg-yellow-400",
+    text: "Inside and out.",
   },
   {
     title: "Determined 🔥",
-    text: "Because hard work has always been one of your strengths.",
-    color: "bg-orange-400",
+    text: "Because hard work is one of your superpowers.",
   },
   {
     title: "Harry 💙",
     text: "And that's what makes you unforgettable.",
-    color: "bg-blue-600",
   },
 ];
 
 export default function ThroughMyEyes() {
   const [opened, setOpened] = useState<number[]>([]);
 
-  const reveal = (index: number) => {
-    if (!opened.includes(index)) {
-      setOpened([...opened, index]);
-    }
-  };
-
   return (
     <section
       id="about"
-      className="min-h-screen bg-slate-950 py-32 px-6"
+      className="relative min-h-screen bg-slate-950 overflow-hidden py-24"
     >
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="text-center mb-20">
 
-        <h2 className="heading text-5xl md:text-7xl mb-6">
+        <h2 className="heading text-5xl md:text-7xl">
           Through My Eyes ✨
         </h2>
 
-        <p className="text-slate-400 mb-20">
+        <p className="text-slate-400 mt-6">
           Pop the balloons and discover
           what makes you special.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-16 place-items-center">
+      </div>
 
-          {balloons.map((balloon, index) => (
-            <div key={index} className="relative h-60 w-60">
+      <div className="relative h-[900px]">
 
+        {qualities.map((item, index) => {
+
+          const top = 80 + Math.random() * 650;
+          const left = 10 + Math.random() * 75;
+
+          return (
+            <div
+              key={index}
+              style={{
+                position: "absolute",
+                top,
+                left: `${left}%`,
+              }}
+            >
               {!opened.includes(index) ? (
 
                 <motion.button
-                  onClick={() => reveal(index)}
+                  onClick={() =>
+                    setOpened([...opened, index])
+                  }
                   animate={{
-                    y: [0, -10, 0],
-                    rotate: [-3, 3, -3],
+                    y: [0, -20, 0],
+                    rotate: [-4, 4, -4],
                   }}
                   transition={{
                     duration: 4,
                     repeat: Infinity,
                   }}
-                  className={`
-                    ${balloon.color}
-                    h-36
-                    w-28
-                    rounded-full
-                    shadow-2xl
-                    mx-auto
-                    relative
-                  `}
+                  className="text-7xl"
                 >
-                  <span className="absolute bottom-[-45px] left-1/2 -translate-x-1/2 text-white">
-                    |
-                  </span>
-
-                  <span className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 text-white">
-                    |
-                  </span>
+                  🎈
                 </motion.button>
 
               ) : (
 
-                <AnimatePresence>
+                <motion.div
+                  initial={{
+                    scale: 0,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    scale: 1,
+                    opacity: 1,
+                  }}
+                  className="
+                    w-72
+                    bg-white/10
+                    backdrop-blur-xl
+                    border
+                    border-white/10
+                    rounded-3xl
+                    p-5
+                    shadow-xl
+                  "
+                >
+                  <div className="text-3xl mb-3">
+                    🎉
+                  </div>
 
-                  <motion.div
-                    initial={{
-                      scale: 0.5,
-                      opacity: 0,
-                    }}
-                    animate={{
-                      scale: 1,
-                      opacity: 1,
-                    }}
-                    className="
-                      bg-white/5
-                      backdrop-blur-xl
-                      border
-                      border-white/10
-                      rounded-3xl
-                      p-6
-                    "
-                  >
-                    <div className="text-3xl mb-3">
-                      🎉
-                    </div>
+                  <h3 className="text-blue-300 text-xl">
+                    {item.title}
+                  </h3>
 
-                    <h3 className="text-xl text-blue-300">
-                      {balloon.title}
-                    </h3>
+                  <p className="mt-3 text-slate-300">
+                    {item.text}
+                  </p>
 
-                    <p className="text-slate-300 mt-3">
-                      {balloon.text}
-                    </p>
-                  </motion.div>
-
-                </AnimatePresence>
+                </motion.div>
 
               )}
-
             </div>
-          ))}
+          );
+        })}
+      </div>
 
-        </div>
-
-        {opened.length === balloons.length && (
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            className="mt-20"
-          >
-            <h2 className="heading text-5xl md:text-7xl text-blue-300">
-              This Is Harry ❤️
-            </h2>
-
-            <p className="mt-6 text-slate-400">
-              Strong. Caring. Adventurous.
-              Supportive. Beautiful. Unforgettable.
-            </p>
-          </motion.div>
-
-        )}
-
+      <div className="text-center mt-10">
+        <p className="text-blue-300">
+          {opened.length} / 9 Memories Discovered
+        </p>
       </div>
     </section>
   );
 }
+``

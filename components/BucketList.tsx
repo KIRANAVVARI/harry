@@ -8,7 +8,7 @@ const goals = [
 
 export default function BucketList() {
   return (
-    <section className="bg-blue-950 text-white py-24">
+    <section id="bucketlist" className="bg-blue-950 text-white py-24">
 
       <h2 className="text-center text-5xl mb-16">
         Future Adventures I wish to do with you ❤️

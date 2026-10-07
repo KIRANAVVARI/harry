@@ -25,7 +25,7 @@ export default function Surprise() {
   };
 
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center px-6 text-center">
+    <section id="gift" className="relative min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center px-6 text-center">
 
       {!opened && (
         <>

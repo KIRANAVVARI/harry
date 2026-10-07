@@ -18,11 +18,17 @@ export default function Navbar() {
           <a href="#gallery" className="text-sm hover:text-blue-400 transition-colors">
             Gallery
           </a>
-          <a href="#birthday" className="text-sm hover:text-blue-400 transition-colors">
-            Birthday
+          <a href="#bucketlist" className="text-sm hover:text-blue-400 transition-colors">
+            BucketList
           </a>
           <a href="#letter" className="text-sm hover:text-blue-400 transition-colors">
             Letter
+          </a>
+          <a href="#birthday" className="text-sm hover:text-blue-400 transition-colors">
+            Birthday
+          </a>
+          <a href="#gift" className="text-sm hover:text-blue-400 transition-colors">
+            Gift
           </a>
         </div>
       </div>

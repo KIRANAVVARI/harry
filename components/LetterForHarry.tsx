@@ -1,61 +1,134 @@
 "use client";
 
-import { motion } from "framer-motion";
-
-const lines = [
-  "Before you go...",
-  "There is something I never wanted this story to end without saying.",
-  "Thank you for every ride.",
-  "Thank you for every sunrise.",
-  "Thank you for every memory.",
-  "Thank you for being you.",
-  "You turned ordinary moments into memories I never want to forget.",
-  "Happy Birthday Harry ❤️",
-  "- Kiran",
-];
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function LetterForHarry() {
+  const [opened, setOpened] = useState(false);
+
   return (
-    <section id="letter" className="relative min-h-screen bg-black py-32 overflow-hidden">
+    <section
+      id="letter"
+      className="
+        relative
+        min-h-screen
+        bg-black
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+        px-6
+      "
+    >
+      {!opened && (
+        <motion.div
+          className="text-center cursor-pointer"
+          onClick={() => setOpened(true)}
+          animate={{
+            y: [0, -15, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+          }}
+        >
+          <div className="text-[150px]">✉️</div>
 
-      <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-5xl text-pink-300 mt-6">
+            A Letter For Harry ❤️
+          </h2>
 
-        {lines.map((line, index) => (
+          <p className="text-slate-400 mt-6 text-xl">
+            Click To Open
+          </p>
+        </motion.div>
+      )}
+
+      <AnimatePresence>
+        {opened && (
           <motion.div
-            key={line}
             initial={{
               opacity: 0,
-              y: 40,
+              scale: 0.8,
             }}
-            whileInView={{
+            animate={{
               opacity: 1,
-              y: 0,
+              scale: 1,
             }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              delay: index * 0.3,
-              duration: 0.8,
-            }}
-            className="text-center"
+            className="
+              max-w-4xl
+              bg-[#fdf6e3]
+              text-black
+              rounded-3xl
+              shadow-2xl
+              p-8
+              md:p-14
+              relative
+            "
           >
-            <p
-              className={`
-                ${
-                  index === 7
-                    ? "text-5xl md:text-8xl text-pink-300 mt-20"
-                    : "text-xl md:text-3xl text-slate-200"
-                }
-                mb-10
-              `}
-            >
-              {line}
-            </p>
-          </motion.div>
-        ))}
+            <div
+              className="
+                absolute
+                inset-0
+                opacity-10
+                bg-[url('/paper-texture.png')]
+              "
+            />
 
-      </div>
+            <h2 className="text-5xl mb-10 text-center">
+              Dear Harry ❤️
+            </h2>
+
+            <div className="space-y-8 text-xl leading-relaxed">
+
+              <p>
+                If someone had told me that a random bike ride
+                would become one of the most important chapters
+                of my life...
+                I probably wouldn't have believed it.
+              </p>
+
+              <p>
+                Thank you for every ride.
+                For every sunrise.
+                For every memory.
+              </p>
+
+              <p>
+                Thank you for turning ordinary days into
+                stories I never want to forget.
+              </p>
+
+              <p>
+                Thank you for being part of countless adventures,
+                countless laughs,
+                and countless moments that made life beautiful.
+              </p>
+
+              <p>
+                I hope this year gives you happiness,
+                peace,
+                success,
+                adventures,
+                and everything your heart quietly wishes for.
+              </p>
+
+              <p>
+                No matter where life takes us,
+                these memories will always remain special.
+              </p>
+
+              <p>
+                Happy Birthday Harry ❤️
+              </p>
+
+              <p className="text-right text-3xl mt-16">
+                — Kiran
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

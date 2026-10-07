@@ -8,7 +8,36 @@ const photos = Array.from(
   (_, i) =>
     `/images/gallery/gallery${String(i + 1).padStart(2, "0")}.jpeg`
 );
+function HeartRain() {
+  const hearts = ["❤️", "💖", "💕", "💗"];
 
+  return (
+    <>
+      {[...Array(40)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute text-3xl pointer-events-none"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: "-80px",
+          }}
+          animate={{
+            y: ["0vh", "120vh"],
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 6 + Math.random() * 5,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "linear",
+          }}
+        >
+          {hearts[Math.floor(Math.random() * hearts.length)]}
+        </motion.div>
+      ))}
+    </>
+  );
+}
 export default function BirthdayFinale() {
   const [current, setCurrent] = useState(0);
 
@@ -17,48 +46,54 @@ export default function BirthdayFinale() {
       setCurrent((prev) =>
         prev === photos.length - 1 ? 0 : prev + 1
       );
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section id="birthday" className="relative min-h-screen overflow-hidden bg-black">
-
+    <div className="absolute inset-0 overflow-hidden z-20">
+  <HeartRain />
+</div>
       {/* Slideshow */}
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.img
           key={photos[current]}
           src={photos[current]}
-          alt=""
-          initial={{
-            opacity: 0,
-            scale: 1.1,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
-          exit={{
-            opacity: 0,
-            scale: 1.05,
-          }}
-          transition={{
-            duration: 1.2,
-          }}
-          className="
-            absolute
-            inset-0
-            h-full
-            w-[900px]
-            h-[900px]
-            rounded-full
-            bg-pink-500/20
-            blur-[220px]
-          "
+          alt="Birthday memory"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 3, ease: "easeInOut" }}
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
       </AnimatePresence>
+      <div className="absolute inset-0 bg-black/60 z-10" />
+      <motion.div
+  animate={{
+    scale: [1, 1.15, 1],
+    opacity: [0.2, 0.45, 0.2],
+  }}
+  transition={{
+    duration: 4,
+    repeat: Infinity,
+  }}
+  className="
+    absolute
+    left-1/2
+    top-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    w-[900px]
+    h-[900px]
+    rounded-full
+    bg-pink-500/20
+    blur-[220px]
+    z-10
+  "
+/>
 
       {/* Text */}
 

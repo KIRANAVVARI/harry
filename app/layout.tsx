@@ -42,3 +42,8 @@ export default function RootLayout({
     </html>
   );
 }
+import { Dancing_Script } from "next/font/google";
+
+const dancing = Dancing_Script({
+  subsets: ["latin"],
+});

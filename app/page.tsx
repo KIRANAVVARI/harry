@@ -5,6 +5,9 @@ import MemoryJourney from "@/components/MemoryJourney";
 import LetterForHarry from "@/components/LetterForHarry";
 import BirthdayFinale from "@/components/BirthdayFinale";
 import MemoryVault from "@/components/MemoryVault";
+import BucketList from "@/components/BucketList";
+import Cake from "@/components/Cake";
+import Surprise from "@/components/Surprise";
 
 export default function Home() {
   return (
@@ -16,8 +19,10 @@ export default function Home() {
         <ThroughMyEyes />
         <MemoryJourney />
         <MemoryVault />
+        <BucketList />
         <LetterForHarry />
         <BirthdayFinale />
+        <Surprise />
       </main>
     </>
   );

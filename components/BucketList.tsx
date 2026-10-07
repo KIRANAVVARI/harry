@@ -11,7 +11,7 @@ export default function BucketList() {
     <section className="bg-blue-950 text-white py-24">
 
       <h2 className="text-center text-5xl mb-16">
-        Future Adventures
+        Future Adventures I wish to do with you ❤️
       </h2>
 
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">

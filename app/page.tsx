@@ -4,6 +4,7 @@ import ThroughMyEyes from "@/components/ThroughMyEyes";
 import MemoryJourney from "@/components/MemoryJourney";
 import LetterForHarry from "@/components/LetterForHarry";
 import BirthdayFinale from "@/components/BirthdayFinale";
+import MemoryVault from "@/components/MemoryVault";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <ThroughMyEyes />
         <MemoryJourney />
+        <MemoryVault />
         <LetterForHarry />
         <BirthdayFinale />
       </main>

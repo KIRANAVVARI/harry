@@ -81,9 +81,6 @@ export default function Hero() {
                  And some become unforgettable."
             </p>
 
-            <button className="mt-12 px-10 py-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white font-semibold shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:scale-105 transition-all duration-300">
-              Begin The Journey ✨
-            </button>
           </div>
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-[120px]" />

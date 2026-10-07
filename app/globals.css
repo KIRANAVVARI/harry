@@ -136,3 +136,6 @@ body {
 .twinkle {
   animation: twinkle 3s ease-in-out infinite;
 }
+.cursive-title {
+  font-family: "Dancing Script", cursive;
+}

@@ -217,9 +217,9 @@ export default function MemoryJourney() {
               mx-auto
             "
           >
-            14 Moments.
+            infinite Moments.
             <br />
-            1000 Memories.
+            1000+ Memories.
             <br />
             1 Harry.
           </p>

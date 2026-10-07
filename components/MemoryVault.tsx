@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const photos = Array.from(
   { length: 51 },
   (_, i) =>
-    `/images/gallery/gallery${String(i + 1).padStart(2, "0")}.jpg`
+    `/images/gallery/gallery${String(i + 1).padStart(2, "0")}.jpeg`
 );
 
 export default function MemoryVault() {
@@ -33,7 +33,7 @@ export default function MemoryVault() {
         </motion.h2>
 
         <p className="text-center text-slate-400 mb-24">
-          51 memories. One beautiful story.
+          50+ memories. One beautiful story.
         </p>
 
         {/* POLAROID WALL */}
@@ -43,13 +43,20 @@ export default function MemoryVault() {
             <motion.div
               key={photo}
               whileHover={{
-                scale: 1.08,
+                scale: 1.12,
                 rotate: 0,
+                y: -20,
                 zIndex: 999,
-              }}
+                boxShadow: "0px 30px 60px rgba(0,0,0,0.5)",
+                }}
               animate={{
-                y: [0, -8, 0],
-              }}
+                    y: [0, -12, 0],
+                    rotate: [
+                        `${(index % 8) - 4}deg`,
+                        `${(index % 8) - 2}deg`,
+                        `${(index % 8) - 4}deg`,
+                    ],
+                    }}
               transition={{
                 duration: 2 + (index % 5),
                 repeat: Infinity,

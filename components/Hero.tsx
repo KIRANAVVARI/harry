@@ -14,6 +14,12 @@ const heroImages = [
 
 export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,6 +29,37 @@ export default function Hero() {
     }, 5000);
 
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const targetDate = new Date("2026-10-10T00:00:00");
+
+    const timer = setInterval(() => {
+      const now = new Date();
+      const difference = targetDate.getTime() - now.getTime();
+
+      if (difference <= 0) {
+        setTimeLeft({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        });
+        clearInterval(timer);
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        ),
+        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((difference % (1000 * 60)) / 1000),
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -71,6 +108,44 @@ export default function Hero() {
             >
               Harry ❤️
             </motion.h2>
+            {timeLeft.days === 0 &&
+timeLeft.hours === 0 &&
+timeLeft.minutes === 0 &&
+timeLeft.seconds === 0 ? (
+  <div className="mt-10">
+    <div className="text-blue-300 uppercase tracking-[0.4em] text-xs mb-4">
+      🎉 IT'S HARRY'S BIRTHDAY 🎉
+    </div>
+  </div>
+) : (
+  <div className="mt-10">
+    <p className="text-blue-300 uppercase tracking-[0.4em] text-xs mb-4">
+      Countdown To Celebrate ✨
+    </p>
+
+    <div className="flex flex-wrap gap-4">
+      {[
+        { value: timeLeft.days, label: "Days" },
+        { value: timeLeft.hours, label: "Hours" },
+        { value: timeLeft.minutes, label: "Minutes" },
+        { value: timeLeft.seconds, label: "Seconds" },
+      ].map((item) => (
+        <div
+          key={item.label}
+          className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-5 py-4 min-w-[90px] text-center"
+        >
+          <div className="text-3xl md:text-4xl font-bold text-white">
+            {String(item.value).padStart(2, "0")}
+          </div>
+
+          <div className="text-xs text-slate-400 mt-1">
+            {item.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-slate-300 md:text-xl">
               Celebrating the memories, adventures, laughter and beautiful moments that made this friendship unforgettable.

@@ -44,6 +44,7 @@ export default function RootLayout({
 }
 import { Dancing_Script } from "next/font/google";
 
-const dancing = Dancing_Script({
+const dancingScript = Dancing_Script({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });

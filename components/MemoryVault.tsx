@@ -13,7 +13,7 @@ export default function MemoryVault() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <section className="relative min-h-screen bg-black py-32 overflow-hidden">
+    <section id="gallery" className="relative min-h-screen bg-black py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* TITLE */}
 

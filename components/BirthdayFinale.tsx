@@ -23,7 +23,7 @@ export default function BirthdayFinale() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black">
+    <section id="birthday" className="relative min-h-screen overflow-hidden bg-black">
 
       {/* Slideshow */}
 

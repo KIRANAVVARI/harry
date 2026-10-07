@@ -16,7 +16,7 @@ const lines = [
 
 export default function LetterForHarry() {
   return (
-    <section className="relative min-h-screen bg-black py-32 overflow-hidden">
+    <section id="letter" className="relative min-h-screen bg-black py-32 overflow-hidden">
 
       <div className="max-w-5xl mx-auto px-6">
 

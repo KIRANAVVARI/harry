@@ -91,7 +91,9 @@ const timeline = [
 
 export default function MemoryJourney() {
   return (
-    <section className="relative bg-black py-32 overflow-hidden">
+    <section
+     id="timeline"
+     className="relative bg-black py-32 overflow-hidden">
 
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-black to-black" />
 

@@ -15,7 +15,7 @@ const chocolates = [
 
 export default function ChocolateRain() {
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {[...Array(80)].map((_, i) => (
         <motion.div
           key={i}

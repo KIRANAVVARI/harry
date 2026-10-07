@@ -85,8 +85,34 @@ const stars = [
 export default function ThroughMyEyes() {
   const [opened, setOpened] = useState<number[]>([]);
   const [slide, setSlide] = useState(0);
+  const [showChocolateRain, setShowChocolateRain] = useState(false);
+  const [feeding, setFeeding] = useState(false);
+  const triggerChocolateRain = () => {
+  setFeeding(true);
 
+  setShowChocolateRain(false);
+
+  setTimeout(() => {
+    setShowChocolateRain(true);
+
+    setTimeout(() => {
+      setShowChocolateRain(false);
+      setFeeding(false);
+    }, 8000);
+  }, 50);
+};
   const allOpened = opened.length === stars.length;
+  useEffect(() => {
+  if (!allOpened) return;
+
+  setShowChocolateRain(true);
+
+  const timer = setTimeout(() => {
+    setShowChocolateRain(false);
+  }, 8000);
+
+  return () => clearTimeout(timer);
+}, [allOpened]);
 
   const reveal = (id: number) => {
     if (!opened.includes(id)) {
@@ -290,7 +316,7 @@ export default function ThroughMyEyes() {
         {allOpened && (
           <AnimatePresence>
 
-            <ChocolateRain />
+            {showChocolateRain && <ChocolateRain />}
 
             <motion.div
               initial={{
@@ -430,20 +456,50 @@ export default function ThroughMyEyes() {
               extra sweetness.
               🍫✨❤️
             </motion.p>
-            <button
-            className="
-              mt-8
-              px-8
-              py-4
-              bg-yellow-500
-              rounded-full
-              text-black
-              font-bold
-            "
-          >
-            Feed Harry More Chocolates 🍫
-          </button>
-``
+            <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                className="text-4xl mt-4"
+              >
+                🍫 🍩 🍪 🍬
+              </motion.div>
+            <motion.button
+              onClick={triggerChocolateRain}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{
+                scale: [1, 1.05, 1],
+                boxShadow: [
+                  "0 0 0px rgba(234,179,8,0.4)",
+                  "0 0 30px rgba(234,179,8,0.8)",
+                  "0 0 0px rgba(234,179,8,0.4)",
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+              }}
+              className="
+                mt-8
+                px-8
+                py-4
+                bg-yellow-500
+                rounded-full
+                text-black
+                font-bold
+                z-20
+              "
+            >
+              {feeding
+                  ? "Deploying Chocolates... 🍫🚀"
+                  : "Feed Harry More Chocolates 🍫"}
+            </motion.button>
+            ``
               </p>
 
             </motion.div>

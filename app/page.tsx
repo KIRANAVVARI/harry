@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ThroughMyEyes from "@/components/ThroughMyEyes";
+import MemoryJourney from "@/components/MemoryJourney";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <main className="bg-slate-950 text-white">
         <Hero />
         <ThroughMyEyes />
+        <MemoryJourney />
       </main>
     </>
   );

@@ -76,13 +76,13 @@ const timeline = [
     text: "Where friends slowly began feeling like family.",
   },
   {
-    date: "Oct 2026",
+    date: "Oct 2025",
     title: "The Birthday ❤️",
     image: "/images/timeline/13-birthday.jpeg",
     text: "A birthday filled with surprises, effort and love.",
   },
   {
-    date: "Oct 2026",
+    date: "Oct 2025",
     title: "Wayanad Diaries 🌿",
     image: "/images/timeline/14-wayanad.jpeg",
     text: "The perfect ending to a beautiful chapter.",
